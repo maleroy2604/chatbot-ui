@@ -9,8 +9,7 @@ def home(request):
 
 def getMessages(request):
     txt = request.GET['text']
-    print(txt)
-    r = requests.get('http://localhost:5000/getMessages/{}'.format(txt))
-    return JsonResponse(r.json())
+    response = requests.get('http://localhost:5000/getMessages/{}'.format(txt))
+    return JsonResponse(response.json())
 
     
